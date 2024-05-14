@@ -1,6 +1,7 @@
 package gui;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import application.Main;
@@ -61,6 +62,7 @@ public class DepartmentListController implements Initializable{
 		if (service == null)
 			throw new IllegalStateException("Service was null");
 		
+		List <Department> list = service.findAll();
 		obsList = FXCollections.observableArrayList(list);
 		tableViewDepartment.setItems(obsList);
 	}
